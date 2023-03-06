@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { View, StyleSheet, Text, Image, TouchableOpacity, Alert } from 'react-native'
-import logo from "./assets/logo.png"
+import logo from "../assets/logo.png"
+import Toggle from '../components/Toggle'
+import {IPage} from '../App'
 
-import Toggle from './Toggle'
-
-export default function Page1() {
+export default function Page1({ setPageI}: IPage) {
   const [flexDirection, setFlexDirection] = useState('row')
   const [justifyContent, setJustifyContent] = useState('center')
   const [alignItems, setAlignItems] = useState('center')
@@ -39,11 +39,16 @@ export default function Page1() {
           setAlignItems(option)
         }}
       />
-      <Text>If you had life eternal?</Text>
+      <Text> If you had life eternal?</Text>
       <TouchableOpacity onPress={() => {
-        Alert.alert('Siamo Con Clavi, Siamo Con Dio, Siamo con il nostro dio scuro')
+        Alert.alert('Clicou!!!')
       }}>
-        <Image source={logo} styles= {styles.img}/>
+        <Image source={logo} style={styles.img} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => {
+        setPageI(2)
+      }}>
+        <Text> Página 2</Text>
       </TouchableOpacity>
       <View style={[styles.layout, layoutStyle]}>
         <View style={styles.box} />
@@ -74,7 +79,7 @@ const styles = StyleSheet.create({
   },
   box: {
     padding: 25,
-    backgroundColor: '#6f00af',
+    backgroundColor: '#8f09dd',
     margin: 5,
   },
 })

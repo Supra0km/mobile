@@ -10,7 +10,7 @@ const items = [
   { id: '4', text: 'ListView' },
 ]
 
-export default function Page2({setPageI}: Ipage) {
+export default function Page2({ setPageI }: IPage) {
   return (
     <>
     <FlatList
@@ -19,12 +19,12 @@ export default function Page2({setPageI}: Ipage) {
       renderItem={({ item }) => <Text style={styles.row}>{item.text}</Text>}
       keyExtractor={(item) => item.id}
     />
-    <TouchableOpacity onPress = {() => {
+    <TouchableOpacity onPress={()=> {
       setPageI(1)
     }}>
-        <Text> Página 1 </Text>
+      <Text> Página 1</Text>
     </TouchableOpacity>
-    </>
+  </>  
   )
 }
 

@@ -1,20 +1,20 @@
-import React, { useState, Dispatch, SetStateAction } from "react";
+import React, {useState, Dispatch, SetStateAction} from "react";
 import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
 
 export interface IPage{
-  setPageI: Dispatch <SetStateAction<number>>
+  setPageI: Dispatch<SetStateAction<number>>
 }
 
-export default function App {
-  const [Page, setPage] = useState(1)
-  return(
+export default function App() {
+  const [page, setPage] = useState(1)
+  return (
     <>
       {
-      Page == 1?
-      (<Page1 setPageI = {setPage} />):
-      (<Page2 setPageI = {setPage} />)
+        page == 1 ?
+          (<Page1 setPageI={setPage} />) :
+          (<Page2 setPageI={setPage} />)
       }
-    </>
+    </>  
   )
 }

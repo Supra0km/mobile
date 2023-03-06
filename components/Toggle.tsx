@@ -4,9 +4,10 @@ import { View, Text, Button, StyleSheet } from 'react-native'
 interface IToggle{
   label: string
   options: Array<string> | string[]
-  value: string
+  value: string 
   onChange: (option: string) => void
 }
+
 export default function Toggle({ label, options, value, onChange }: IToggle) {
   return (
     <View style={styles.container}>
